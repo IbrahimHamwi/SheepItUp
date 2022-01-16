@@ -32,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             other.gameObject.SetActive(false);
 
-            //SoundManager.instance.PickedUpCoin();
+            SoundManager.instance.PickedUpCoin();
             //GameplayController.instance.IncrementScore();
         }
         if (other.gameObject.tag == "Spike")
@@ -40,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
             cameraFollow.CanFollow = false;
             gameObject.SetActive(false);
 
-            //SoundManager.instance.GameEndSound();
+            SoundManager.instance.GameEndSound();
             //GameplayController.instance.Restart();
         }
     }
@@ -48,7 +48,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.gameObject.tag == "EndPlatform")
         {
-            //SoundManager.instance.GameEndSound();
+            SoundManager.instance.GameEndSound();
             //GameplayController.instance.Restart();
         }
     }
