@@ -21,8 +21,8 @@ public class PlayerInteraction : MonoBehaviour
                 playerDied = true;
                 cameraFollow.CanFollow = false;
 
-                //SoundManager.instance.GameEndSound();
-                //GameplayController.instance.RestartGame();
+                SoundManager.instance.GameEndSound();
+                GameplayController.instance.RestartGame();
             }
         }
     }//update
@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
             other.gameObject.SetActive(false);
 
             SoundManager.instance.PickedUpCoin();
-            //GameplayController.instance.IncrementScore();
+            GameplayController.instance.IncrementScore();
         }
         if (other.gameObject.tag == "Spike")
         {
@@ -41,7 +41,7 @@ public class PlayerInteraction : MonoBehaviour
             gameObject.SetActive(false);
 
             SoundManager.instance.GameEndSound();
-            //GameplayController.instance.Restart();
+            GameplayController.instance.RestartGame();
         }
     }
     private void OnCollisionEnter(Collision other)
@@ -49,7 +49,7 @@ public class PlayerInteraction : MonoBehaviour
         if (other.gameObject.tag == "EndPlatform")
         {
             SoundManager.instance.GameEndSound();
-            //GameplayController.instance.Restart();
+            GameplayController.instance.RestartGame();
         }
     }
 }
